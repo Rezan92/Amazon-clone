@@ -2,12 +2,17 @@
   box-sizing: border-box;
 }
 
-body, html {
+/* Question: If I don't set the min-width for the body, the page on the screens (smaller then 948px)
+  will shrink and the page will be half of the screen. I tried to solve it but I couldn't.
+ If you can explain where my mistake is, I'd appreciate it. */
+
+body{
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  min-width: fit-content;
+  /* min-width: fit-content; */
   background-color: #eaeded;
+   min-width: 948px; /*If you remove this line and open the Devtools you will anderstand what I mean*/
 }
 
 header {
@@ -20,7 +25,6 @@ header {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  width: 100%;
 }
 
 .nav-left {
@@ -149,7 +153,7 @@ header {
   border: 1px solid transparent;
   margin: 4px;
   color: #ffffff;
-  padding: 0 9px;
+  padding: 0 6px;
   width: 120px;
 }
 
@@ -314,6 +318,8 @@ main {
 .main-background_image i {
   position: absolute;
   top: 25%;
+  color: #6b6b6b;
+  cursor: pointer;
 }
 
 .flex-container {
@@ -403,6 +409,90 @@ main {
   cursor: pointer;
 }
 
+.flex-row_container {
+  padding: 0 1rem;
+  margin-top: 1rem;
+}
+
+.flex-row-1_container{
+  background-color: white;
+  padding: 1rem;
+  position: relative;
+  margin-bottom: 1.4rem;
+}
+
+.flex-row-1_container:hover .angele-arrow {
+  display: block;
+}
+
+.angele-arrow {
+  background-color: #fffffff5;
+  display: none;
+  padding: 1rem;
+  border-radius: 3px;
+  position: absolute;
+  top: 28%;
+  cursor: pointer;
+  color: rgb(102, 102, 102);
+}
+
+
+.an-aro1 {
+  box-shadow: 2px 0 2px #9b9a9a;
+  left: 10px;
+}
+
+.an-aro2 {
+  box-shadow: -2px 0 2px #9b9a9a;
+  right: 10px;
+}
+
+.flex-row-1_container h2 {
+  display: inline-block;
+  color: #474747;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin: 0;
+  margin-right: 1rem;
+}
+
+.flex-row-1_container small{
+    font-size: .9rem;
+    font-weight: small;
+    color: #1b6bc2;
+}
+
+.flex-row-1_container small:hover{
+  color: #c96028;
+    text-decoration: underline;
+    text-decoration-color: #c96028;
+    cursor: pointer;
+}
+
+.discover-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow: auto;
+}
+
+.discover-item {
+  margin: 0 30px;
+  cursor: pointer;
+}
+
+.discover-container::-webkit-scrollbar {
+  width: 5px;
+  background-color: white;
+  height: 5px;
+}
+
+.discover-container::-webkit-scrollbar-thumb {
+  background: #6b6b6b; 
+  border-radius: 10px;
+}
+
+
 @media (max-width: 1196px) {
   .flex-items:last-child{
     display: block;
@@ -412,7 +502,4 @@ main {
     max-width: 370px;
   }
 
-  /* .nav-line-2{
-    font-size: .6rem;
-  } */
 }
