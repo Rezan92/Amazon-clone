@@ -10,9 +10,9 @@ body{
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  /* min-width: fit-content; */
+  /* min-width: fit-content; */ /*<- I tried this slution, it works but it causes problems for the property "overflow"*/
   background-color: #eaeded;
-   min-width: 948px; /*If you remove this line and open the Devtools you will anderstand what I mean*/
+   min-width: 948px; /* <- If you remove this line and open the Devtools you will understand what I mean*/
 }
 
 header {
@@ -379,7 +379,7 @@ main {
   color: #1b6bc2;
 }
 
-.flex-items .sign-btn {
+.flex-items .sign-btn, .sign-btn {
   background:linear-gradient(to top, #f0c14c, #faebc8);
   font-size: .8rem;
   color: black;
@@ -395,7 +395,7 @@ main {
   transition: all .5s;
 }
 
-.flex-items .sign-btn:hover{
+.flex-items .sign-btn:hover, .sign-btn:hover{
   background: linear-gradient(to top, #eeb934, #f9e6b9);
   color: black;
   text-decoration:none;
@@ -492,6 +492,149 @@ main {
   border-radius: 10px;
 }
 
+/* footer */
+
+.main-footer {
+  color: white;
+}
+
+.white-board {
+  background-color: white;
+  margin: 0;
+  margin-top: 2rem;
+  height: 3rem;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.main-footer_header {
+  background-color: white;
+  margin: 0;
+  padding: 1rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.main-footer_header h3 {
+  margin: 0;
+  margin-bottom: .4rem;
+  color: #444;
+  font-weight: 400;
+}
+
+.main-footer_header p {
+  margin: .4rem;
+  margin: auto;
+  width: 300px;
+}
+
+.footer-body_header {
+  background-color: #37475a;
+  padding: 1rem;
+  text-align: center;
+}
+
+.footer-body_header:hover{
+  background-color: #485769;
+}
+
+.footer-body_header p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.footer-body_container {
+  background-color: #232f3e;
+  padding: 2.2rem 0;
+  padding-bottom: 0; 
+}
+
+.footer-body_content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 0 1rem 3rem;
+  width: 90%;
+  margin: auto;
+  max-width: 1000px;
+}
+
+.footer-container {
+  list-style-type: none;
+  margin: 0 1rem;
+  padding: 0;
+}
+
+.footer-container h3 {
+  font-size: 16px;
+  color: #fefefe;
+  margin: 14px 0;
+}
+
+.footer-container li {
+  font-size: 13px;
+  color: #DDD;
+  margin: 0 0 10px;
+}
+
+.footer-container li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.border-line {
+  border-bottom: 1px solid #707070;
+}
+
+.footer-middle_belt {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem;
+}
+
+.footer-logo {
+  box-sizing: content-box;
+  height: 25px;
+  padding-top: .28rem;
+  margin-right: 6rem;
+  cursor: pointer;
+}
+
+.footer-logo img {
+  height: 100%;
+}
+
+.footer-middle_item {
+  font-size: 14px;
+  box-sizing: content-box;
+  border: 1px solid #777777;
+  margin: 3px;
+  padding: .2rem 1rem .2rem .3rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.footer-middle_item p {
+  margin: .4rem;
+}
+
+.footer-copy-right {
+  background-color: #131a21;
+  text-align: center;
+  padding: 1.3rem;
+  font-size: 14px;
+}
+
+.footer-copy-right small{
+  margin: .7rem;
+}
+
+.footer-copy-right small:last-child{
+  color: #7c7c7c;
+}
 
 @media (max-width: 1196px) {
   .flex-items:last-child{
