@@ -223,13 +223,9 @@ header {
   cursor: pointer;
 }
 
-.nav-global-location .icon-desktop {
+.nav-global-location i {
   float: left;
   margin-right: 4px;
-}
-
-.nav-global-location .icon-mobile {
-  display: none;
 }
 
 .nav-global-location .nav-global_text-mobile {
@@ -264,6 +260,7 @@ header {
   padding: 5px;
   cursor: pointer;
   border: 1px solid transparent;
+  white-space: nowrap;
 }
 
 .xshop-item:hover {
@@ -652,74 +649,92 @@ main {
 }
 
 @media (max-width: 679px) {
-  *:hover {
-    border: 0px solid transparent !important;
+
+  body {
+    min-width: 340px;
   }
-  
+
+  .main-background_image {
+    background-position: left 67% top 0;
+  }
   .nav-belt {
+    background-color: #232f3e;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0 20px;
+    min-width: 300px;
   }
 
   .nav-left {
-    height: auto;
+    width: auto;
+    height: 39px;
+    padding: 8px;
     align-items: center;
   }
 
   .nav-hamburger-menu {
     border: none;
     box-sizing: content-box;
+    margin: 0;
+    margin-right: 5px;
   }
 
   .nav-hamburger-menu div {
-    width: 3.1rem;
-    height: 6px;
-    margin: 13px 0;
+    width: 24px;
+    height: 2px;
+    margin: 7px 0;
+  }
+
+  .logo {
+    padding: 0;
+    height: 26px;
   }
 
   .logo img {
     box-sizing: content-box;
-    height: 62px;
-    padding-left: 23px;
-    padding-top: 21px;
+    width: 80px;
+    height: 27px;
   }
 
   .nav-search {
     order: 1;
+    margin: 0 7px;
+    min-width: 332px;
   }
 
   .nav-search input {
-    height: 110px;
-    border-radius: 7px 0 0 7px;
-    font-size: 3rem;
+    height: 44px;
+    width: 100%;
+    border-radius: 3px 0 0 3px;
+    font-size: 1.1rem;
     padding-left: 17px;
   }
 
   .nav-search button {
-    width: 110px;
-    border-radius: 0 7px 7px 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 0 3px 3px 0;
   }
 
   .nav-search button i {
-    font-size: 3.1rem;
+    font-size: 1.6rem;
   }
 
   .nav-right {
-    flex-grow: 0;
     height: auto;
+    min-width: 177px;
+    padding-right: 10px;
     justify-content: flex-end;
     align-items: center;
   }
 
   .cart-image-container img {
     box-sizing: content-box;
-    padding-top: 10px;
-    height: 80px;
+    padding-top: 3px;
+    height: 33px;
   }
 
   .nav-line-2 {
-    font-size: 1.9rem;
+    font-size: .9rem;
     padding-bottom: 10px;
   }
 
@@ -734,31 +749,29 @@ main {
     height: auto;
     width: auto;
     padding: 0;
+    width: 100%;
   }
 
   .nav-global-location {
-    padding: 1rem;
-    padding-left: 2rem;
+    padding: .5rem;
+    padding-left: 1rem;
     width: auto;
     display: flex;
-    justify-content: center;
     align-items: center;
+    background: #37475a;
+    width: 100%;
   }
 
-  .nav-search select, .nav-right .flag, .nav-right_container, .nav-global-location .icon-desktop, .nav-global-location .nav-global_text-desktop, .swm-text-container, .nav-subnav-container {
+  .nav-search select, .nav-right .flag,
+  .nav-right_container, .nav-global-location .nav-global_text-desktop, .swm-text-container, .nav-subnav-container {
     display: none;
-  }
-
-  .nav-global-location .icon-mobile {
-    display: inline-block;
-    margin-right: 1rem;
   }
 
   .nav-global-location .nav-global_text-mobile {
     box-sizing: content-box;
     display: inline-block;
-    font-size: 2rem;
-    color: #d4d4d4;
+    font-size: .8rem;
+    color: #ffffff;
     margin: 0;
   }
 
@@ -768,10 +781,46 @@ main {
   }
 
   .nav-xshop {
-    justify-content: center;
-    font-size: 26px;
-    padding: 1rem;
-    background-color: #121920;
+    font-size: 15px;
+    padding: .5rem;
+    color: white;
+    background-color: #232f3e;
+    overflow-x: auto;
+  }
+
+  .nav-xshop::-webkit-scrollbar{
+    height: 5px;
+    background-color: #232f3e;
+  }
+
+  .nav-xshop::-webkit-scrollbar-thumb {
+    background: #6b6b6b;
+    border-radius: 10px;
+  }
+
+  .flex-row-1_container:hover .angele-arrow {
+    display: none;
+  }
+
+  .flex-row-1_container small {
+    display: block;
+  }
+
+  .footer-desktop {
+    display: none;
+  }
+
+  .footer-middle_belt {
+    flex-direction: column;
+  }
+
+  .footer-logo {
+    margin-right: 0;
+  }
+
+  .footer-copy-right small:nth-child(n) {
+    white-space: nowrap;
+    font-size: 9px;
   }
 }
 
