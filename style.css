@@ -2,17 +2,11 @@
   box-sizing: border-box;
 }
 
-/* Question: If I don't set the min-width for the body, the page on the screens (smaller then 948px)
-  will shrink and the page will be half of the screen. I tried to solve it but I couldn't.
- If you can explain where my mistake is, I'd appreciate it. */
-
-body{
+body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  /* min-width: fit-content; */ /*<- I tried this slution, it works but it causes problems for the property "overflow"*/
   background-color: #eaeded;
-   min-width: 948px; /* <- If you remove this line and open the Devtools you will understand what I mean*/
 }
 
 header {
@@ -31,7 +25,10 @@ header {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  min-width: 220px;
+  width: 100%;
+  max-width: 192px;
+  min-width: 120px;
+  margin-right: 20px;
   height: 60px;
 }
 
@@ -56,13 +53,14 @@ header {
 
 .logo {
   width: 100%;
+  max-width: 99px;
   margin: 4px 0;
   padding: 7px 0;
   border: 1px solid transparent;
 }
 
 .logo img {
-  height: 31px;
+  width: 100%;
   padding-top: 2px;
 }
 
@@ -93,6 +91,7 @@ header {
   padding: 4px;
   color: #505050;
   cursor: pointer;
+  height: 38px;
 }
 
 .nav-search input {
@@ -100,6 +99,7 @@ header {
   height: 38px;
   outline: none;
   border: none;
+  border-radius: unset;
   margin: 0;
   padding: 5px;
 }
@@ -111,6 +111,7 @@ header {
   border: none;
   border-radius: 0 3px 3px 0;
   cursor: pointer;
+  height: 38px;
 }
 
 .nav-search button i {
@@ -123,7 +124,7 @@ header {
   flex-wrap: nowrap;
   flex-grow: 1;
   min-width: 364px;
-  height: 60px;
+  /* height: 60px; */
 }
 
 .flag {
@@ -153,12 +154,13 @@ header {
   border: 1px solid transparent;
   margin: 4px;
   color: #ffffff;
-  padding: 0 6px;
+  padding: 7px 6px;
   width: 120px;
+  line-height: 14px;
 }
 
 .nav-text_return-order {
-    width: 80px;
+  width: 80px;
 }
 
 .nav-right_container:hover {
@@ -168,7 +170,7 @@ header {
 
 .nav-line-1 {
   display: block;
-  color: #969696;
+  color: #e4e4e4;
   font-size: 12px;
   margin-top: .5rem;
 }
@@ -221,9 +223,17 @@ header {
   cursor: pointer;
 }
 
-.nav-global-location i {
+.nav-global-location .icon-desktop {
   float: left;
   margin-right: 4px;
+}
+
+.nav-global-location .icon-mobile {
+  display: none;
+}
+
+.nav-global-location .nav-global_text-mobile {
+  display: none;
 }
 
 .nav-global-location small {
@@ -347,10 +357,10 @@ main {
 }
 
 .flex-items:nth-child(4) {
-  height:  405.703px;
+  height: 405.703px;
 }
 
-.flex-items:last-child{
+.flex-items:last-child {
   display: none;
 }
 
@@ -380,7 +390,7 @@ main {
 }
 
 .flex-items .sign-btn, .sign-btn {
-  background:linear-gradient(to top, #f0c14c, #faebc8);
+  background: linear-gradient(to top, #f0c14c, #faebc8);
   font-size: .8rem;
   color: black;
   border-radius: 3px;
@@ -395,10 +405,10 @@ main {
   transition: all .5s;
 }
 
-.flex-items .sign-btn:hover, .sign-btn:hover{
+.flex-items .sign-btn:hover, .sign-btn:hover {
   background: linear-gradient(to top, #eeb934, #f9e6b9);
   color: black;
-  text-decoration:none;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -414,7 +424,7 @@ main {
   margin-top: 1rem;
 }
 
-.flex-row-1_container{
+.flex-row-1_container {
   background-color: white;
   padding: 1rem;
   position: relative;
@@ -436,7 +446,6 @@ main {
   color: rgb(102, 102, 102);
 }
 
-
 .an-aro1 {
   box-shadow: 2px 0 2px #9b9a9a;
   left: 10px;
@@ -456,20 +465,20 @@ main {
   margin-right: 1rem;
 }
 
-.flex-row-1_container small{
-    font-size: .9rem;
-    font-weight: small;
-    color: #1b6bc2;
+.flex-row-1_container small {
+  font-size: .9rem;
+  font-weight: small;
+  color: #1b6bc2;
 }
 
-.flex-row-1_container small:hover{
+.flex-row-1_container small:hover {
   color: #c96028;
-    text-decoration: underline;
-    text-decoration-color: #c96028;
-    cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: #c96028;
+  cursor: pointer;
 }
 
-.discover-container{
+.discover-container {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -488,7 +497,7 @@ main {
 }
 
 .discover-container::-webkit-scrollbar-thumb {
-  background: #6b6b6b; 
+  background: #6b6b6b;
   border-radius: 10px;
 }
 
@@ -533,8 +542,9 @@ main {
   text-align: center;
 }
 
-.footer-body_header:hover{
+.footer-body_header:hover {
   background-color: #485769;
+  cursor: pointer;
 }
 
 .footer-body_header p {
@@ -545,7 +555,7 @@ main {
 .footer-body_container {
   background-color: #232f3e;
   padding: 2.2rem 0;
-  padding-bottom: 0; 
+  padding-bottom: 0;
 }
 
 .footer-body_content {
@@ -628,21 +638,270 @@ main {
   font-size: 14px;
 }
 
-.footer-copy-right small{
+.footer-copy-right small {
   margin: .7rem;
 }
 
-.footer-copy-right small:last-child{
+.footer-copy-right small:nth-child(-n+3):hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.footer-copy-right small:last-child {
   color: #7c7c7c;
 }
 
-@media (max-width: 1196px) {
-  .flex-items:last-child{
-    display: block;
+@media (max-width: 679px) {
+  *:hover {
+    border: 0px solid transparent !important;
+  }
+  
+  .nav-belt {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  .nav-left {
+    height: auto;
+    align-items: center;
+  }
+
+  .nav-hamburger-menu {
+    border: none;
+    box-sizing: content-box;
+  }
+
+  .nav-hamburger-menu div {
+    width: 3.1rem;
+    height: 6px;
+    margin: 13px 0;
+  }
+
+  .logo img {
+    box-sizing: content-box;
+    height: 62px;
+    padding-left: 23px;
+    padding-top: 21px;
+  }
+
+  .nav-search {
+    order: 1;
+  }
+
+  .nav-search input {
+    height: 110px;
+    border-radius: 7px 0 0 7px;
+    font-size: 3rem;
+    padding-left: 17px;
+  }
+
+  .nav-search button {
+    width: 110px;
+    border-radius: 0 7px 7px 0;
+  }
+
+  .nav-search button i {
+    font-size: 3.1rem;
+  }
+
+  .nav-right {
+    flex-grow: 0;
+    height: auto;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .cart-image-container img {
+    box-sizing: content-box;
+    padding-top: 10px;
+    height: 80px;
+  }
+
+  .nav-line-2 {
+    font-size: 1.9rem;
+    padding-bottom: 10px;
+  }
+
+  .nav-belt2 {
+    box-sizing: content-box;
+    padding: 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .nav-global {
+    height: auto;
+    width: auto;
+    padding: 0;
+  }
+
+  .nav-global-location {
+    padding: 1rem;
+    padding-left: 2rem;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-search select, .nav-right .flag, .nav-right_container, .nav-global-location .icon-desktop, .nav-global-location .nav-global_text-desktop, .swm-text-container, .nav-subnav-container {
+    display: none;
+  }
+
+  .nav-global-location .icon-mobile {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+
+  .nav-global-location .nav-global_text-mobile {
+    box-sizing: content-box;
+    display: inline-block;
+    font-size: 2rem;
+    color: #d4d4d4;
+    margin: 0;
+  }
+
+  .nav-xshop-container {
+    width: 100%;
+    order: -1;
+  }
+
+  .nav-xshop {
+    justify-content: center;
+    font-size: 26px;
+    padding: 1rem;
+    background-color: #121920;
+  }
+}
+
+@media (min-width:680px) and (max-width: 963px) {
+  .nav-belt {
+    align-items: center;
+  }
+
+  .nav-left {
+    height: auto;
+    width: 14%;
+    margin-right: 40px;
+  }
+
+  .nav-hamburger-menu {
+    height: 33px;
+    margin: 6px;
+    padding: 2.5px 6px;
+  }
+
+  .nav-hamburger-menu div {
+    width: 1rem;
+    height: 1.5px;
+    margin: 5px 0;
+  }
+
+  .logo {
+    padding: 0;
+    padding-top: 5px;
+  }
+
+  .nav-search select, .nav-search button {
+    height: 30px;
+  }
+
+  .nav-search {
+    min-width: unset;
+    width: auto;
+    margin: 0;
+  }
+
+  .nav-search input {
+    height: 30px;
+    min-width: 150px;
+    margin: 0;
+  }
+
+  .nav-right {
+    min-width: 262px;
+  }
+
+  .flag {
+    min-width: unset;
+    width: auto;
+    margin: 0 3px;
+  }
+
+  .flag img {
+    height: 17px;
+  }
+
+  .nav-right_container {
+    width: unset;
+    line-height: 10px;
+    margin: 0 3px;
+    padding: 7px 6px;
+  }
+
+  .nav-line-1 {
+    font-size: 9px;
+  }
+
+  .nav-line-2 {
+    font-size: 10px;
+  }
+
+  .cart-image-container img {
+    height: 20px;
+  }
+
+  .cart-container {
+    margin: 0;
+  }
+
+  .nav-global-location .icon-desktop {
+    margin-right: 7px;
+  }
+
+  .nav-global-location {
+    line-height: 13px;
+  }
+
+  .nav-global {
+    width: 155px;
+  }
+
+  .swm-text-container {
+    font-size: 11px;
+  }
+
+  .nav-xshop {
+    box-sizing: content-box;
+    font-size: 10px;
   }
 
   .flex-items {
-    max-width: 370px;
+    max-width: unset;
+    min-width: unset;
+    width: 24%;
   }
 
+  .flex-items h2{
+    font-size: .85rem;
+  }
+
+  .footer-body_content {
+    padding: 0 0 3rem;
+  }
+
+  .footer-container h3 {
+    font-size: 12px;
+  }
+
+  .footer-container li {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 1198px) {
+  .flex-items:last-child {
+    display: block;
+  }
 }
